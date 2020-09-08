@@ -1,3 +1,40 @@
-.tweet {
-  border: 15px solid green;
+article.tweet {
+  display: flex;
+  flex-direction: column;
+  border: 4px solid dimgray;
+  padding: 20px;
+}
+
+article.tweet header {
+  display: flex;
+  flex-direction: row;
+}
+
+article.tweet .name {
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+article.tweet .handle {
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: 30px;
+}
+
+article.tweet p {
+  margin-left: 15px;
+}
+
+article.tweet header img {
+  height: 5%;
+  width: 5%;
+}
+
+article.tweet footer {
+  border-top: 4px solid dimgray;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  font-size: 60%;
+  justify-content: space-between;
 }
