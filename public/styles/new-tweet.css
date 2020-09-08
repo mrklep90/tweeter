@@ -4,22 +4,22 @@ textarea {
   resize: none;
 }
  
-button {
+.new-tweet form div button {
   font-family: 'Bungee', sans-serif;
   background-color: #4056A1;
   color: #FFFFFF;
 }
 
-output {
+.new-tweet form div .counter {
   font-family: 'Bungee', sans-serif;
 }
 
-div {
+.new-tweet form div {
   display: flex;
   justify-content: space-between;
 }
 
-section {
+.new-tweet {
   padding-top: 50px;
   padding-bottom: 25px;
   display: flex;
