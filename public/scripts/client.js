@@ -86,11 +86,20 @@ $(document).ready(function() {
   loadTweets();
 
   $('form').on('submit', (evt) => {
+    evt.preventDefault();
     if ($('#tweet-text').val().length > 140) {
-      alert('Tweet exceeds the 140 character limitation!');
+      $('.alert').empty();
+      $('.alert').append('Tweet exceeds the 140 character limitation!');
+      $('.alert').slideDown();
+      $('.alert').css('display', 'flex');
     } else if ($('#tweet-text').val().length === 0) {
-      alert("You can't Tweet without a Tweet!");
+      $('.alert').empty();
+      $('.alert').append("You can't Tweet without a Tweet!");
+      $('.alert').slideDown();
+      $('.alert').css('display', 'flex');
     } else {
+      $('.alert').slideUp();
+      $('.alert').empty();
       evt.preventDefault();
       $.ajax({
         url: '/tweets/',
