@@ -7,8 +7,26 @@
 $(document).ready(function() {
 
   const createTweetElement = function(tweet) {
+
+    const characterMap = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;',
+      '/': '&#x2F;',
+      '`': '&#x60;',
+      '=': '&#x3D;'
+    };
+    
+    function escape (string) {
+      return String(string).replace(/[&<>"'`=\/]/g, function (s) {
+        return characterMap[s];
+      });
+    }
     
     const date = new Date(tweet.created_at);
+    const tweetText = escape(tweet.content.text);
     
     let $tweet = `
     <article class="tweet">
@@ -18,7 +36,7 @@ $(document).ready(function() {
     <span class="handle">${tweet.user.handle}</span>
     </header>
     <p>
-    ${tweet.content.text}
+    ${tweetText}
     </p>
     <footer>
     <span>${date}</span>
