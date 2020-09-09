@@ -57,14 +57,20 @@ $(document).ready(function() {
 
   $('form').on('submit', (evt) => {
     evt.preventDefault();
-    $.ajax({
-      url: '/tweets/',
-      method: 'POST',
-      data: $('textarea').serialize()
-    }).then(function(response) {
-      $('form').trigger('reset');
-      console.log(response);
-    })
+    if ($('#tweet-text').val().length > 140) {
+      alert('Tweet exceeds the 140 character limitation!');
+    } else if ($('#tweet-text').val().length === 0) {
+      alert("You can't Tweet without a Tweet!");
+    } else {
+      $.ajax({
+        url: '/tweets/',
+        method: 'POST',
+        data: $('form').serialize()
+      }).then(function(response) {
+        $('form').trigger('reset');
+        console.log(response);
+      })
+    }
   })
   
 });
