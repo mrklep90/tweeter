@@ -33,22 +33,34 @@ $(document).ready(function() {
   const renderTweets = function(tweets) {
     
     let $tweet;
-    
-    for (const tweet of tweets) {
-      $tweet = createTweetElement(tweet);
-      $('#tweets-container').append($tweet);
+
+    if (tweets.length > 0) {
+      for (const tweet of tweets) {
+        $tweet = createTweetElement(tweet);
+        $('#tweets-container').append($tweet);
+      }
+    } else {
+      $tweet = createTweetElement(tweets);
+      $('#tweets-container').prepend($tweet);
     }
     
   };
   
-  const loadTweets = function() {
+  const loadTweets = function(recentTweet) {
 
     $.ajax({
       url: '/tweets/',
       method: 'GET',
       dataType: 'JSON' 
     }).then(function(response) {
-      renderTweets(response);
+      let sortedResponse = response.sort(function (a, b) {
+        return b.created_at - a.created_at;
+      })
+      if (!recentTweet) {
+        renderTweets(sortedResponse);
+      } else if (recentTweet) {
+        renderTweets(sortedResponse.shift());
+      }
     })
 
   };
@@ -56,19 +68,19 @@ $(document).ready(function() {
   loadTweets();
 
   $('form').on('submit', (evt) => {
-    evt.preventDefault();
     if ($('#tweet-text').val().length > 140) {
       alert('Tweet exceeds the 140 character limitation!');
     } else if ($('#tweet-text').val().length === 0) {
       alert("You can't Tweet without a Tweet!");
     } else {
+      evt.preventDefault();
       $.ajax({
         url: '/tweets/',
         method: 'POST',
         data: $('form').serialize()
       }).then(function(response) {
         $('form').trigger('reset');
-        console.log(response);
+        loadTweets(true);
       })
     }
   })
