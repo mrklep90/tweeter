@@ -8,7 +8,7 @@
   margin-bottom: 1em;
 }
 
-  /* Container for form character counter and submit button */
+  /* Container for form submit button and character counter */
   .new-tweet div {
     display: flex;
     justify-content: space-between;
