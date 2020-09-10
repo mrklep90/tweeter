@@ -6,16 +6,16 @@ nav {
   height: 120px;
   width: 100%;
   padding: 1.5em;
-  font-size: 36px;
+  font-size: xx-large;
   position: fixed;
   top: 0;
 }
 
-#branding {
+nav .branding {
   font-family: 'Bungee', sans-serif;
 }
 
-#compose {
+nav .compose {
   cursor: pointer;
   font-size: large;
 }

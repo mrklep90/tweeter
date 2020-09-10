@@ -1,51 +1,59 @@
+/* Tweet container */
 article.tweet {
   display: flex;
   flex-direction: column;
   border: 4px solid #545149;
-  padding: 20px;
+  padding: 1em;
   margin-bottom: 1em;
 }
+  /* Header containing avatar, name, and handle */
+  article.tweet header {
+    display: flex;
+    flex-direction: row;
+  }
+    
+    /* Avatar */
+    article.tweet header img {
+      height: 5%;
+      width: 5%;
+    }
+    
+    /* Name */
+    article.tweet .name {
+      margin-top: 1em;
+      margin-left: 1em;
+    }
+    
+    /* Handle */
+    article.tweet .handle {
+      display: none;
+      margin-top: 1em;
+      margin-left: auto;
+      margin-right: 2em;
+      color: lightgray;
+    }
 
-article.tweet header {
-  display: flex;
-  flex-direction: row;
-}
+  /* Body of tweet */
+  article.tweet p {
+    margin-left: 1em;
+  }
 
-article.tweet header img {
-  height: 5%;
-  width: 5%;
-}
+  /* Footer containing age of tweet and social media icons */
+  article.tweet footer {
+    border-top: 4px solid #545149;
+    padding: .5em;
+    display: flex;
+    flex-direction: row;
+    font-size: 60%;
+    justify-content: space-between;
+  }
+    
+    /* Social media icons */
+    article.tweet footer i {
+      padding: 2px;
+    }
 
-article.tweet .name {
-  margin-top: 15px;
-  margin-left: 15px;
-}
-
-article.tweet .handle {
-  display: none;
-  margin-top: 15px;
-  margin-left: auto;
-  margin-right: 30px;
-  color: lightgray;
-}
-
-article.tweet p {
-  margin-left: 15px;
-}
-
-article.tweet footer {
-  border-top: 4px solid #545149;
-  padding: 10px;
-  display: flex;
-  flex-direction: row;
-  font-size: 60%;
-  justify-content: space-between;
-}
-
-article.tweet footer i {
-  padding: 2px;
-}
-
+/* Changes to container during hover state */ 
 article.tweet:hover {
   font-weight: bold;
   box-shadow: 10px 10px 5px #C1C1DB;
