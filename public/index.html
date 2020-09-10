@@ -27,7 +27,8 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span>tweeter</span>
+      <span id="branding">tweeter</span>
+      <span id="compose" onClick="document.getElementById('tweet-form').scrollIntoView(false);">Write a new tweet</span>
     </nav>
 
     <header class="page-header">
@@ -44,7 +45,7 @@
     <main class="container">
       <section class="new-tweet">
         <span class="alert"></span>
-        <form action="/tweets/" method="POST">
+        <form action="/tweets/" method="POST" id="tweet-form">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
           <div>

@@ -1,4 +1,6 @@
 nav {
+  display: flex;
+  justify-content: space-between;
   background-color: #4056A1;
   color: #FFFFFF;
   height: 120px;
@@ -9,6 +11,11 @@ nav {
   top: 0;
 }
 
-nav span {
+#branding {
   font-family: 'Bungee', sans-serif;
+}
+
+#compose {
+  cursor: pointer;
+  font-size: large;
 }
