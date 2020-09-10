@@ -17,3 +17,6 @@ This repository is the starter code for the project: Students will fork and clon
 - Node 5.10.x or above
 
 ## Screenshots
+
+!["Main functionality"](https://github.com/mrklep90/tweeter/blob/master/docs/Tweet_page.png?raw=true)
+!["User base"](https://github.com/mrklep90/tweeter/blob/master/docs/Celebrity_users.png?raw=true)
