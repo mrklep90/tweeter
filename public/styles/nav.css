@@ -1,3 +1,6 @@
+/* Default/Mobile View */
+
+/* Navbar */
 nav {
   display: flex;
   justify-content: space-between;
@@ -11,11 +14,18 @@ nav {
   top: 0;
 }
 
-nav .branding {
-  font-family: 'Bungee', sans-serif;
-}
+  nav .branding {
+    font-family: 'Bungee', sans-serif;
+  }
 
-nav .compose {
-  cursor: pointer;
-  font-size: large;
-}
+  nav .compose {
+    cursor: pointer;
+    font-size: large;
+  }
+
+/* Desktop View */
+@media only screen and (min-width: 1024px) {
+  nav {
+    height: 100px;
+  }
+};

@@ -1,3 +1,6 @@
+/* Default/Mobile View */
+
+/* Header */
 .page-header {
   display: flex;
   background-color: darkgoldenrod;
@@ -10,3 +13,17 @@
   align-items: center;
   margin-top: 120px;
 }
+
+/* Desktop View */
+@media only screen and (min-width: 1024px) {
+  .page-header {
+    width: 33%;
+    margin-top: 170px;
+  }
+
+  .page-header img {
+    margin-top: 50px;
+    margin-bottom: -30px;
+  }
+
+};
