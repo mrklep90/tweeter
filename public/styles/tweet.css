@@ -34,6 +34,7 @@ article.tweet {
 
   /* Body of tweet */
   article.tweet p {
+    word-wrap: break-word;
     margin-left: 1em;
   }
 
