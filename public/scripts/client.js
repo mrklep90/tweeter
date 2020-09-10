@@ -26,6 +26,8 @@ $(document).ready(function() {
     }
     
     const date = new Date(tweet.created_at);
+    const today = new Date();
+    const days = Math.floor((today.getTime() - date.getTime()) / (1000*60*60*24));
     const tweetText = escape(tweet.content.text);
     
     let $tweet = `
@@ -39,7 +41,7 @@ $(document).ready(function() {
     ${tweetText}
     </p>
     <footer>
-    <span>${date}</span>
+    <span>${days} days ago</span>
     <span><i class="fab fa-font-awesome-flag"></i><i class="fas fa-retweet"></i><i class="fas fa-heart"></i></span>
     </footer>
     <article>`
